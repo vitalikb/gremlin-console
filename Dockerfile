@@ -1,4 +1,4 @@
-FROM tinkerpop/gremlin-console:3.4.9
+FROM tinkerpop/gremlin-console:3.4.8
 
 #Gremlin Client
 ADD 70-gremlin /etc/update-motd.d/70-gremlin
@@ -12,4 +12,5 @@ ADD neptune-remote.yaml /opt/gremlin-console/neptune-remote.yaml
 
 USER root
 RUN keytool -import -alias neptune-tests-ca -keystore /home/gremlin/certs/cacerts -file /opt/gremlin-console/SFSRootCAG2.cer -noprompt -storepass changeit
+RUN chmod ug+w /opt/gremlin-console/neptune-remote.yaml
 USER gremlin
