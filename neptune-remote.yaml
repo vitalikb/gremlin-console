@@ -1,0 +1,8 @@
+hosts: [YourNeptuneEndpoint]
+port: 8182
+connectionPool: {
+  channelizer: org.apache.tinkerpop.gremlin.driver.SigV4WebSocketChannelizer,
+  enableSsl: true,
+  trustCertChainFile: "SFSRootCAG2.pem"
+}
+serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GryoMessageSerializerV3d0, config: { serializeResultToString: true }}

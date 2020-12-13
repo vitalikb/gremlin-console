@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "Please replace YourNeptuneEndpoint in neptune-remote.yaml"
+echo "vi /opt/gremlin-console/conf/neptune-remote.yaml"
+echo "Then run:"
+echo "cd /opt/gremlin-console/ && bin/gremlin.sh"
+echo ":remote connect tinkerpop.server conf/neptune-remote.yaml"
+echo ":remote console"
+echo "g.V().limit(1)"
