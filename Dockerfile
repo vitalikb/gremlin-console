@@ -12,5 +12,5 @@ ADD neptune-remote.yaml /opt/gremlin-console/neptune-remote.yaml
 
 USER root
 RUN keytool -import -alias neptune-tests-ca -keystore /home/gremlin/certs/cacerts -file /opt/gremlin-console/SFSRootCAG2.cer -noprompt -storepass changeit
-RUN chmod ug+w /opt/gremlin-console/neptune-remote.yaml
+RUN chmod ug+w /opt/gremlin-console/neptune-remote.yaml && chown gremlin:gremlin /opt/gremlin-console/neptune-remote.yaml
 USER gremlin
