@@ -9,6 +9,7 @@ RUN wget --quiet -O /opt/gremlin-console/SFSRootCAG2.cer https://www.amazontrust
 && mkdir -p /home/gremlin/certs \
 && cp $JAVA_HOME/lib/security/cacerts /home/gremlin/certs/cacerts
 ADD neptune-remote.yaml /opt/gremlin-console/neptune-remote.yaml
+ADD init.groovy /opt/gremlin-console/init.groovy
 
 USER root
 RUN keytool -import -alias neptune-tests-ca -keystore /home/gremlin/certs/cacerts -file /opt/gremlin-console/SFSRootCAG2.cer -noprompt -storepass changeit
